@@ -147,3 +147,49 @@ def send_email(Subject, Text, From='kdkhome@naver.com', To='sunnmoon137@gmail.co
         server.quit()
     except smtplib.SMTPException as e:
         print e
+        
+class Database:
+
+    def __init__(self, user='root', password='1q2w3e4r', db_name='crops'):
+        """
+
+        :param user: str, user id
+        :param password: str, passwd
+        :param db_name: str, db_name
+        """
+
+        self.conn = pymysql.connect(host='localhost', user=user, password=password, db=db_name, charset='utf8')
+        self.curs = self.conn.cursor()
+
+    def select(self, sql):
+        """
+
+        :param sql: sql syntax
+        :return: fetch all
+        """
+
+        self.curs.execute(sql)
+
+        return self.curs.fetchall()
+
+    def insert(self, sql, data):
+        """
+
+        :param sql: sql syntax
+        :param data:
+        :return:
+        """
+
+        self.curs.execute(sql, data)
+        self.conn.commit()
+
+    def update(self, sql):
+        """
+
+        :param sql:
+        :return:
+        """
+
+        self.curs.execute(sql)
+        self.conn.commit()
+
