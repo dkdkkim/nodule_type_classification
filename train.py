@@ -18,7 +18,7 @@ flags.DEFINE_integer("num_gpu", 2, help="Number of GPUs")
 flags.DEFINE_integer("batch_size", 24, help="batch_size")
 flags.DEFINE_float("lr_init", 0.008, help="lr init")
 flags.DEFINE_string("save_path", "/data/dk/models/SEdense_test", help="Directory name to save the weights and records")
-flags.DEFINE_string("data_path", "/data/dk/type_crops", help="Directory name to save the weights and records")
+flags.DEFINE_string("data_path", "/data/dk/type_crops", help="Directory to load data")
 flags.DEFINE_string("CUDA_VISIBLE_DEVICES", "0,1", help="GPU number")
 
 FLAGS = flags.FLAGS

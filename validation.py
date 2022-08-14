@@ -1,13 +1,15 @@
-import json, os, pymysql,sys
+import json, os, sys
 import matplotlib
 matplotlib.use("Agg")
 import tensorflow as tf
+import numpy as np
 from utils import Database, original_load, npy_load, tower_loss
 
 flags = tf.app.flags
 flags.DEFINE_integer("num_gpu", 1, help="Number of GPUs")
 flags.DEFINE_integer("batch_size", 4, help="batch_size")
 flags.DEFINE_string("save_path", "/data/dk/models/final/type_classification", help="Directory name to save the weights and records")
+flags.DEFINE_string("data_path", "/data/dk/type_crops", help="Directory to load data")
 flags.DEFINE_string("CUDA_VISIBLE_DEVICES", "1", help="GPU number")
 FLAGS = flags.FLAGS
 
@@ -59,8 +61,8 @@ class type():
         elif is_type == 'non-solid':
             v_label = np.zeros([self.batch, 1])
 
-        val_lists = ['/data/dk/type_crops/valid2/' + is_type + '/*/*/*/*/*/',
-                             '/data/dk/type_crops/valid/' + is_type + '/*/*/*/*/*/']
+        val_lists = [FLAGS.data_path + '/valid2/' + is_type + '/*/*/*/*/*/',
+                             FLAGS.data_path + '/valid/' + is_type + '/*/*/*/*/*/']
 
         with tf.Graph().as_default(), tf.device('/cpu:0'):
             val_loss, val_acc, count_nsn, count_psn, count_sn = \
