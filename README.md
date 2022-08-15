@@ -2,14 +2,12 @@
 The main objective of this project is to develop type classification model for lung nodule in 3D CT image.
 There are 3 classes of solid, part-solid and non-solid in lung nodule type classification.
 
+<img src="./assets/img/type_classification.jpg" width="40%" height="30%" title="Lung Nodule Type" alt="lung_nodule_type"></img>
 
 # Table Of Contents
 -  [Requirements](#Requirements)
--  [In Details](#in-details)
 -  [How to use](#how-to-use)
--  [Future Work](#future-work)
--  [Contributing](#contributing)
--  [Acknowledgments](#acknowledgments)
+-  [In Details](#in-details)
 
 # Requirements
 - [Python](https://www.python.org/) Ensure Python 3.0 or greater is installed.
