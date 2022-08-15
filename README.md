@@ -4,6 +4,10 @@ There are 3 classes of solid, part-solid and non-solid in lung nodule type class
 
 <p align="center"><img src="assets/img/type_classification_01.png" width="80%" height="30%" title="Lung Nodule Type" alt="lung_nodule_type"></img>
 
+The model is 3D image classification model based on [DensNet-121](https://arxiv.org/abs/1608.06993). To improve its performance, an attention module and ensemble methoed are applied.
+
+<p align="center"><img src="assets/img/type_classification_02.png" width="80%" height="30%" title="overview" alt="overview"></img>
+
 # Table Of Contents
 -  [Requirements](#Requirements)
 -  [How to use](#how-to-use)
